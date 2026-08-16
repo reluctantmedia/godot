@@ -45,6 +45,9 @@ public:
 
 	virtual RID get_environment() const override { return environment; }
 	virtual RID get_camera_attributes() const override { return camera_attributes; }
+	virtual RID get_cluster_buffer() const override { return cluster_buffer; }
+	virtual uint32_t get_cluster_size() const override { return cluster_size; }
+	virtual uint32_t get_cluster_max_elements() const override { return cluster_max_elements; }
 
 	// Members are publicly accessible within the render engine.
 	Ref<RenderSceneBuffersRD> render_buffers;

@@ -324,3 +324,8 @@ RID RenderSceneDataRD::decal_atlas_get_texture_srgb() const {
 RID RenderSceneDataRD::directional_shadow_get_texture() const {
 	return RendererRD::LightStorage::get_singleton()->directional_shadow_get_texture();
 }
+
+RID RenderSceneDataRD::shadow_get_texture() const {
+	return RendererRD::LightStorage::get_singleton()->owns_shadow_atlas(shadow_atlas) 
+		? RendererRD::LightStorage::get_singleton()->shadow_atlas_get_texture(shadow_atlas) : RID();
+}

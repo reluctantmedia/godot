@@ -81,6 +81,7 @@ public:
 	virtual RID decal_atlas_get_texture() const override;
 	virtual RID decal_atlas_get_texture_srgb() const override;
 	virtual RID directional_shadow_get_texture() const override;
+	virtual RID shadow_get_texture() const override;
 
 	GDVIRTUAL0RC(Transform3D, _get_cam_transform)
 	GDVIRTUAL0RC(Projection, _get_cam_projection)
@@ -97,6 +98,7 @@ public:
 	GDVIRTUAL0RC(RID, _decal_atlas_get_texture)
 	GDVIRTUAL0RC(RID, _decal_atlas_get_texture_srgb)
 	GDVIRTUAL0RC(RID, _directional_shadow_get_texture)
+	GDVIRTUAL0RC(RID, _shadow_get_texture)
 };
 
 class RenderDataExtension : public RenderData {
@@ -110,9 +112,15 @@ protected:
 
 	virtual RID get_environment() const override;
 	virtual RID get_camera_attributes() const override;
+	virtual RID get_cluster_buffer() const override;
+	virtual uint32_t get_cluster_size() const override;
+	virtual uint32_t get_cluster_max_elements() const override;
 
 	GDVIRTUAL0RC(Ref<RenderSceneBuffers>, _get_render_scene_buffers)
 	GDVIRTUAL0RC(RenderSceneData *, _get_render_scene_data)
 	GDVIRTUAL0RC(RID, _get_environment)
 	GDVIRTUAL0RC(RID, _get_camera_attributes)
+	GDVIRTUAL0RC(RID, _get_cluster_buffer)
+	GDVIRTUAL0RC(uint32_t, _get_cluster_size)
+	GDVIRTUAL0RC(uint32_t, _get_cluster_max_elements)
 };

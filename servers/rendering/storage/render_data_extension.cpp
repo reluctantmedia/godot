@@ -81,6 +81,7 @@ void RenderSceneDataExtension::_bind_methods() {
 	GDVIRTUAL_BIND(_decal_atlas_get_texture);
 	GDVIRTUAL_BIND(_decal_atlas_get_texture_srgb);
 	GDVIRTUAL_BIND(_directional_shadow_get_texture);
+	GDVIRTUAL_BIND(_shadow_get_texture);
 }
 
 Transform3D RenderSceneDataExtension::get_cam_transform() const {
@@ -155,6 +156,12 @@ RID RenderSceneDataExtension::directional_shadow_get_texture() const {
 	return ret;
 }
 
+RID RenderSceneDataExtension::shadow_get_texture() const {
+	RID ret;
+	GDVIRTUAL_CALL(_shadow_get_texture, ret);
+	return ret;
+}
+
 // RenderDataExtension
 
 void RenderDataExtension::_bind_methods() {
@@ -162,6 +169,9 @@ void RenderDataExtension::_bind_methods() {
 	GDVIRTUAL_BIND(_get_render_scene_data);
 	GDVIRTUAL_BIND(_get_environment);
 	GDVIRTUAL_BIND(_get_camera_attributes);
+	GDVIRTUAL_BIND(_get_cluster_buffer);
+	GDVIRTUAL_BIND(_get_cluster_size);
+	GDVIRTUAL_BIND(_get_cluster_max_elements);
 }
 
 Ref<RenderSceneBuffers> RenderDataExtension::get_render_scene_buffers() const {
@@ -185,5 +195,23 @@ RID RenderDataExtension::get_environment() const {
 RID RenderDataExtension::get_camera_attributes() const {
 	RID ret;
 	GDVIRTUAL_CALL(_get_camera_attributes, ret);
+	return ret;
+}
+
+RID RenderDataExtension::get_cluster_buffer() const {
+	RID ret;
+	GDVIRTUAL_CALL(_get_cluster_buffer, ret);
+	return ret;
+}
+
+uint32_t RenderDataExtension::get_cluster_size() const {
+	uint32_t ret = 0;
+	GDVIRTUAL_CALL(_get_cluster_size, ret);
+	return ret;
+}
+
+uint32_t RenderDataExtension::get_cluster_max_elements() const {
+	uint32_t ret = 0;
+	GDVIRTUAL_CALL(_get_cluster_max_elements, ret);
 	return ret;
 }

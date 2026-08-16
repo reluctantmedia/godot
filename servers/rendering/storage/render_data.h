@@ -46,4 +46,7 @@ public:
 
 	virtual RID get_environment() const = 0;
 	virtual RID get_camera_attributes() const = 0;
+	virtual RID get_cluster_buffer() const = 0;
+	virtual uint32_t get_cluster_size() const = 0;
+	virtual uint32_t get_cluster_max_elements() const = 0;
 };

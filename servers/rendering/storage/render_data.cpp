@@ -37,4 +37,7 @@ void RenderData::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_render_scene_data"), &RenderData::get_render_scene_data);
 	ClassDB::bind_method(D_METHOD("get_environment"), &RenderData::get_environment);
 	ClassDB::bind_method(D_METHOD("get_camera_attributes"), &RenderData::get_camera_attributes);
+	ClassDB::bind_method(D_METHOD("get_cluster_buffer"), &RenderData::get_cluster_buffer);
+	ClassDB::bind_method(D_METHOD("get_cluster_size"), &RenderData::get_cluster_size);
+	ClassDB::bind_method(D_METHOD("get_cluster_max_elements"), &RenderData::get_cluster_max_elements);
 }

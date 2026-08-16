@@ -49,4 +49,5 @@ void RenderSceneData::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("decal_atlas_get_texture"), &RenderSceneData::decal_atlas_get_texture);
 	ClassDB::bind_method(D_METHOD("decal_atlas_get_texture_srgb"), &RenderSceneData::decal_atlas_get_texture_srgb);
 	ClassDB::bind_method(D_METHOD("directional_shadow_get_texture"), &RenderSceneData::directional_shadow_get_texture);
+	ClassDB::bind_method(D_METHOD("shadow_get_texture"), &RenderSceneData::shadow_get_texture);
 }

@@ -55,4 +55,5 @@ public:
 	virtual RID decal_atlas_get_texture() const = 0;
 	virtual RID decal_atlas_get_texture_srgb() const = 0;
 	virtual RID directional_shadow_get_texture() const = 0;
+	virtual RID shadow_get_texture() const = 0;
 };

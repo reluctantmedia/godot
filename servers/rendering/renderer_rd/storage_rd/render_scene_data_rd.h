@@ -50,6 +50,8 @@ public:
 	bool cam_orthogonal = false;
 	bool flip_y = false;
 
+	RID shadow_atlas;
+
 	// For billboards to cast correct shadows.
 	Transform3D main_cam_transform;
 
@@ -103,6 +105,7 @@ public:
 	virtual RID decal_atlas_get_texture() const override;
 	virtual RID decal_atlas_get_texture_srgb() const override;
 	virtual RID directional_shadow_get_texture() const override;
+	virtual RID shadow_get_texture() const override;
 
 	static uint32_t get_uniform_buffer_size_bytes() { return sizeof(UBODATA); }
 
