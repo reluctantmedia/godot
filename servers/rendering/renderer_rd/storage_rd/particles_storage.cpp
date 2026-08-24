@@ -1370,6 +1370,7 @@ void ParticlesStorage::_particles_update_buffers(Particles *particles) {
 	if (userdata_count != particles->userdata_count) {
 		// Mismatch userdata, re-create all buffers.
 		_particles_free_data(particles);
+		only_instances_changed = true;
 	} else if (enable_motion_vectors) {
 		// Only motion vectors are required, release the transforms buffer and uniform set.
 		if (particles->particle_instance_buffer.is_valid()) {
